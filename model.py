@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun May  3 13:04:03 2020
-
-@author: Avi
-"""
 import pandas as pd
 from glob import glob
 import os
@@ -11,10 +5,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-xray_full = pd.read_csv('C:/Users/Avi/Desktop/Data/Data_Entry_2017.csv')
+xray_full = pd.read_csv('PATH')
 xray_data = xray_full[0:14999]
 
-image_glob = glob('C:/Users/Avi/Desktop/Data/images*/images/*.png')
+image_glob = glob('PATH')
 full_img_paths = {os.path.basename(x): x for x in image_glob}
 xray_data['full_path'] = xray_data['Image Index'].map(full_img_paths.get)
 
